@@ -1,0 +1,633 @@
+/************************************************
+////////////////////////////////////////////////
+
+    TABLE OF CONTENTS
+
+    * 01- CSS Reset
+    * 02- Typography
+    * 03- Header & Navigation
+    * 04- Page Content
+    * 05- Footer
+    * 06- Media Queries
+
+/////////////////////////////////////////////////
+************************************************/
+
+
+/* ----------------------------------------------
+    
+    COLOR Black: / White / Light Grey / Dim grey /
+    
+    BASELINE GRID: 1/ 1.5 ( line-height 24px / 4,2,7 )
+
+    
+    MODULAR SCALE: Major Second / 1.125 /
+
+    1-16px ( .889, 1.125, 1.266, 1.424, 1.602, 1.802, 2.027, 2.281, 2.566, 2.887, 3.247, 3.653)
+    
+-----------------------------------------------*/
+
+
+/************************************************
+////////////////////////////////////////////////
+
+    01--CSS RESET
+
+/////////////////////////////////////////////////
+************************************************/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+figure,
+fig caption,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+    font-weight: normal;
+}
+
+#container {
+    position: relative;
+}
+
+
+/************************************************
+////////////////////////////////////////////////
+
+    02--TYPOGRAPHY
+
+/////////////////////////////////////////////////
+************************************************/
+
+
+/*
+font-family: 'Source Sans Pro', sans-serif; ( 600(semi-bold), 900(black) )
+font-family: 'Raleway', sans-serif; ( 400(regular) )
+*/
+
+html {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+}
+
+h2,
+h3 {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 1.602rem;
+    font-weight: 900;
+    line-height: 1.75rem;
+    letter-spacing: .25px;
+    margin-bottom: .75rem;
+}
+
+h2 {
+    font-size: 1.266rem;
+    letter-spacing: -.4px;
+    line-height: 1.45rem;
+    word-spacing: -.75px;
+    margin-bottom: .5rem
+}
+
+h3 {
+    font-size: 1.125rem;
+    letter-spacing: .5px;
+    margin: 0;
+    margin-bottom: .4375rem;
+    /**/
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+
+/*----ARTICLE--PAGE-----*/
+
+
+/*---------------------*/
+
+article {
+    margin: 0 auto;
+}
+
+.byline {
+    color: #575757;
+}
+
+figure figcaption {
+    margin-top: .437rem;
+    margin-bottom: 1.5rem;
+    background-color: #e3e3e3;
+    border-bottom: solid #8b8b8b 3px;
+    padding: 16px;
+}
+
+article figcaption > p {
+    margin: 0;
+}
+
+
+/*----ARTICLE--LISTS-----*/
+
+article ul {
+    list-style: square outside none;
+    padding-left: 1rem;
+}
+
+article li {
+    padding-left: .75rem;
+    padding-bottom: .75rem;
+}
+
+
+/*----GENERAL-LINKS----*/
+
+a {
+    text-decoration: none;
+}
+
+
+/*----SKIP-NAV-LINK----*/
+
+#skip-to-content a {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#skip-to-content a:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: #000;
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+    z-index: 10000;
+}
+
+
+/*----IN-TEXT-LINKS----*/
+
+article p > a:link {
+    color: #1414e3;
+    border-bottom: solid #1414e3 1px;
+}
+
+article p > a:visited {
+    color: #8b8b8b;
+    border-bottom: solid #8b8b8b 1px;
+}
+
+article p > a:hover {
+    color: #000;
+    background-color: #dbd7d7;
+    border-bottom: solid #000 2px;
+}
+
+article p > a:focus {
+    color: #fff;
+    background-color: #000;
+    border-bottom: solid #1414e3 4px;
+}
+
+article p > a:active {
+    color: #fff;
+    background-color: #3c3c3c;
+    border-bottom: solid #1414e3 4px;
+}
+
+
+/*----HEADING-LINKS-HOME-PAGE--*/
+
+#top-story header > a:link {
+    color: #333;
+}
+
+#top-story header > a:visited {
+    color: #8b8b8b;
+}
+
+#top-story header > a:hover {
+    color: #1414e3;
+}
+
+#top-story header > a:focus {
+    background-color: #4a4a4a;
+}
+
+#top-story header > a:active {
+    color: #000;
+}
+
+
+/************************************************
+////////////////////////////////////////////////
+
+    03--HEADER & NAVIGATION
+
+/////////////////////////////////////////////////
+************************************************/
+
+.masthead {
+    box-shadow: 0 8px 6px -6px #ccc9c9;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 1000;
+}
+
+nav {
+    width: 250px;
+    max-width: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: -250px;
+    transition: right .5s;
+    background-color: #ffffff;
+    text-align: center;
+    border-bottom: solid #b4b1b1 .5px;
+    border-top: solid #b4b1b1 .5px;
+    border-left: solid #b4b1b1 .5px;
+    box-shadow: 0 8px 6px -6px #ccc9c9;
+}
+
+button {
+    cursor: pointer;
+    border-radius: .5rem;
+    padding: .5rem;
+}
+
+button:hover,
+button:focus {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+a.skip,
+a.skip:visited {
+    color: #ffffff;
+    background-color: #000000;
+    padding: .625rem;
+    position: fixed;
+    top: -100px;
+    /* brings to the front */
+    z-index: 1001;
+}
+
+a.skip:focus {
+    top: 0;
+}
+
+header button {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+}
+
+nav button {
+    font-size: 2rem;
+    background-color: transparent;
+    border: 0px;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 2.85rem;
+    margin-bottom: 1.85rem;
+}
+
+nav li {
+    padding: 5px 10px 5px 10px;
+    display: block;
+}
+
+
+/*----NAV-LINKS----*/
+
+nav a:link {
+    display: block;
+    font-size: 1rem;
+    color: #333333;
+    border-bottom: solid #ffffff 2.5px;
+}
+
+nav a:visited {
+    color: #767474;
+    border-bottom: solid #ffffff 2.5px;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #000000;
+    background-color: #cccccc;
+    border-bottom: solid #000000 2.5px;
+}
+
+nav a:active {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
+/************************************************
+////////////////////////////////////////////////
+
+    04--PAGE CONTENT / IMAGES
+
+/////////////////////////////////////////////////
+************************************************/
+
+section header {
+    margin-bottom: 1rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+/*----LOGO------*/
+
+.masthead img {
+    min-width: 200px;
+    width: 75%;
+    margin-left: .5rem;
+    margin-top: .5rem;
+}
+
+
+/*----HOME--PAGE-----*/
+
+.landing {
+    padding: 0 1rem;
+    max-width: 1500px;
+    margin: 4rem auto;
+}
+
+.landing section {
+    margin-top: 2rem;
+}
+
+.byline {
+    margin: 0;
+    margin-bottom: .875rem;
+}
+
+.landing h1 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    background-color: #000000;
+    color: #ffffff;
+    padding: .2rem 1rem;
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    float: right;
+}
+
+#top-story h2 {
+    font-weight: 900;
+}
+
+.landing section > header:first-of-type {
+    border-bottom: solid #000000 5px;
+    overflow: auto;
+    clear: right;
+}
+
+.extra-article-tag {
+    background-color: #d3d3d3;
+    padding: .25rem;
+    display: inline;
+    text-align: center;
+    border-bottom: 0;
+    position: absolute;
+    margin-bottom: 0;
+}
+
+.landing header > img {
+    margin-bottom: .75rem;
+}
+
+
+/*----ARTICLE--PAGE-----*/
+
+.single article {
+    max-width: 580px;
+    padding: 0 1rem;
+    margin: 4rem auto;
+}
+
+article figure > img {
+    margin-bottom: 1.5rem;
+}
+
+article figure > figcaption {
+    margin-top: -2rem;
+}
+
+
+/************************************************
+////////////////////////////////////////////////
+
+    05--FOOTER
+
+/////////////////////////////////////////////////
+************************************************/
+
+footer {
+    border-top: 1px solid #333333;
+    margin: 0;
+    padding: 1.5rem .5rem .5rem;
+    margin-top: 4rem;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+
+/************************************************
+////////////////////////////////////////////////
+
+    06--MEDIA QUERIES
+
+/////////////////////////////////////////////////
+************************************************/
+
+@media screen and ( min-width: 600px) {
+    /*----TYPOGRAPHY-----*/
+    html {
+        font-size: 1.125rem;
+        line-height: 1.875rem;
+    }
+    h1 {
+        font-size: 2.027rem;
+        line-height: 2.2rem;
+        word-spacing: -4px;
+        letter-spacing: .20px;
+    }
+    h2 {
+        font-size: 1.424rem;
+    }
+    h3 {
+        font-size: 1.125rem;
+    }
+    nav li {
+        font-size: 1rem;
+    }
+    /*----HOME--PAGE-----*/
+    .landing h1 {
+        width: 200px;
+        word-spacing: .5px;
+        letter-spacing: .75px;
+    }
+    /*----ARTICLE--FIGURE-FLOAT--*/
+    .article-figure-float {
+        width: 100%;
+        margin-bottom: 1.875rem;
+    }
+    .article-figure-float > img {
+        width: 46%;
+        margin: 0;
+        float: none;
+    }
+    .article-figure-float figcaption {
+        width: 50%;
+        margin: 0;
+        float: right;
+        padding: 48px 16px 48px 16px;
+        background-color: transparent;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+    }
+}
+
+@media screen and ( min-width: 700px) {
+    /*----MASTHEAD----*/
+    .masthead button {
+        display: none;
+    }
+    .masthead img {
+        display: block;
+        margin: .5rem auto;
+    }
+    .masthead {
+        position: relative;
+    }
+    /*----NAVIGATION-----*/
+    nav {
+        position: static;
+        width: 100%;
+        border-left: 0px;
+        border-top: 0px;
+        box-shadow: none;
+    }
+    nav ul {
+        margin: 0;
+    }
+    nav li {
+        display: inline-block;
+        padding: 10px;
+    }
+    /*----SINGLE PAGES----*/
+    article,
+    .single article {
+        max-width: 800px;
+    }
+    .single article {
+        margin: 2rem auto;
+    }
+    /*----HOME--PAGE-----*/
+    .landing {
+        margin: 2rem auto;
+    }
+    .landing article {
+        margin: 0 auto;
+    }
+    #top-story > article {
+        max-width: 1300px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        grid-gap: 1rem;
+    }
+    #top-story article > img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    #top-story article > div {
+        grid-column: 2 / 2;
+        grid-row: 1 / 1;
+    }
+    .landing .grid-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        grid-gap: 3rem;
+    }
+}
+
+@media screen and ( min-width: 1200px) {
+    /*----TYPOGRAPHY-----*/
+    html {
+        font-size: 1.424rem;
+        line-height: 2.48rem;
+    }
+    h1 {
+        line-height: 2.887rem;
+        line-height: 2.25rem;
+        word-spacing: -4px;
+        letter-spacing: -.55px;
+    }
+    h2 {
+        font-size: 1.266rem;
+    }
+    /*----HOME--PAGE-----*/
+    .extra-article-tag {
+        width: 150px;
+    }
+    .landing h1 {
+        width: 250px;
+    }
+    /*----ARTICLE--FIGURE-FLOAT--*/
+    .article-figure-float figcaption {
+        padding: 90px 16px 90px 16px;
+    }
+}

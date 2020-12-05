@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" Trustworthy News">
+    <meta name="keywords" content=" elmendorf, news, local news, national news">
+    <meta name="author" content="David Drake">
+    <meta name="designer" content="Mariana Diaz">
+    <link href="https://fonts.googleapis.com/css?family=Raleway%7CSource+Sans+Pro:600,900" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Doctor Discovers a New Disease</title>
+</head>
+
+<body class="single">
+    <div id="container"><a href="#main-content" class="skip">Skip to Main Content</a>
+        <header class="masthead">
+            <a href="index.html"><img src="Assets/ElmendorfEnquirer_Logo.svg" alt="The Elmendorf Enquirer Homepage"></a>
+            <button onclick="openNav()">Menu</button>
+            <nav id="theNav">
+                <button aria-label="Close" class="closeBtn" onfocus="openNav()" onclick="closeNav()">&times;</button>
+                <ul>
+                    <li><a href="#" onfocus="openNav()">Local</a></li>
+                    <li><a href="#" onfocus="openNav()">National</a></li>
+                    <li><a href="#" onfocus="openNav()">Global</a></li>
+                    <li><a href="#" onfocus="openNav()">Opinion</a></li>
+                    <li><a href="#" onfocus="openNav()">Sports</a></li>
+                    <li><a href="#" onfocus="openNav()">The Arts</a></li>
+                    <li><a href="#" onfocus="openNav()">Tech</a></li>
+                    <li><a href="#" onfocus="openNav()" onblur="closeNav()">Health</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main-content">
+            <article id="main-content">
+                <header>
+                    <h1>Doctor with 30 Years of Treating Rare Illnesses Discovers a New Disease</h1>
+                    <p class="byline"> Feb. 27, 2018
+                        <br> Samantha Lears, Albany, N.Y</p>
+                </header>
+                <figure> <img src="Assets/Hospital_Microscope.jpg" alt=""> </figure>
+                <p> A 33-year-old insurance saleswoman from Vermont returned from a vacation in the Caribbean and mysteriously fell ill. Her primary care physician noted that she suffered from fatigue, severe pain through her upper extremities, shortness of breath and other ailments with no known cause. Her physician referred her to Dr. Andrew Grogan in Worcester, Mass., an internal medicine specialist who concentrated in endocrinology and worked for a number of years in the Rare and Undiagnosed Disease Program with the Mayo Clinic in Rochester, Minn. </p>
+                <p> &ldquo;She came to me in terrible shape,&rdquo; Grogan stated. When he reviewed her medical history, Grogan found that the patient normally had a clean bill of health, and her present condition was &ldquo;nothing short of a mystery.&rdquo; </p>
+                <p> &ldquo;When I asked her if anything happened during her vacation, she told me she walked along the beach one evening and directly into a bird's nest,&rdquo; Grogan said. </p>
+                <p> At first, Grogan believed the patient had a different form of Lyme disease until she unexpectedly passed away on February 18. A full autopsy concluded that the patient was infected with a strange toxin from what appeared to be a bug bite on her leg. </p>
+                <p> &ldquo;It wasn't just a bug bite,&rdquo; Grogan said. &ldquo;The bug had actually burrowed under the upper layer of her skin and basically fed off her blood.&rdquo; </p>
+                <p> Grogan, who spends most of his time as a researcher at the University of Massachusetts&mdash;Worcester School of Medicine, compiled his findings of the patient's disease, and along with the autopsy report, he released the data to both the Mayo Clinic and the Centers for Disease Control and Prevention (CDC). The CDC has since dubbed the disease <a href="grogan-disease-new.html">&ldquo;Grogan's Disease.&rdquo;</a> </p>
+                <p> Grogan said that having a disease named after him is &ldquo;a dubious honor,&rdquo; and that his primary concern is to continue researching the mysterious disease. </p>
+                <p> &ldquo;Hopefully through research I'll find something that can eradicate this disease,&rdquo; he said. </p>
+            </article>
+        </main>
+        <footer>
+            <p>This demo website was designed by Mariana Diaz and written by David Drake under the direction of Rebecca Mushtare and with funding support from <a href="http://teachaccess.org/">Teach Access</a> to help individuals practice and learn accessible web design. The Elmendorf Enquirer is available for your use under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. </p>
+        </footer>
+    </div>
+    <script>
+        /* place the navigation on the page */
+        function openNav() {
+            document.getElementById("theNav").style.right = "0";
+        }
+        /* place the navigation off the page */
+        function closeNav() {
+            document.getElementById("theNav").style.right = "-250px";
+        }
+    </script>
+</body>
+
+</html>
